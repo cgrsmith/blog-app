@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<main class="ui main text container">
+
+    <header class="ui header">
+        <h2><%= blog.title %></h2>
+    </header>
+    <article class="ui item segment">
+        <span>By: <%= blog.author %> (<%= blog.created.toDateString() %>)</span>
+        <img class="ui centered image" src="<%= blog.image %>" alt="Post Thumbnail">
+        <div class="content">
+            <p><%- blog.body %></p>
+        </div>
+    </article>
+
+
+</main>
+
+
+
+<% include partials/footer %>
