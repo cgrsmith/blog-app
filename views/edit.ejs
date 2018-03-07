@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+<main class="ui main text container">
+    <header class="ui header">
+        <h1>Edit Blog Post</h1>
+    </header>
+    <form action="/blog/<%= blog._id %>?_method=PUT" method="POST" class="ui form segment">
+        <div class="field">
+            <label>Post Title</label>
+            <input type="text" name="blog[title]" value="<%= blog.title %>" required>
+        </div>
+        <div class="field">
+            <label>Image Link</label>
+            <input type="text" name="blog[image]" value="<%= blog.image %>" required>
+        </div>
+        <div class="field"> 
+            <label>Post Text</label>
+            <textarea name="blog[content]" required><%= blog.content %></textarea>
+        </div>
+        <button class="ui big button" type="submit">Submit Post</button>
+    </form>
+
+    <form action="/blog/<%= blog._id %>?_method=DELETE" method="POST" class="ui form segment">
+        <div class="field">
+            <h2 class="ui header">Delete Post</h2>
+            <div class="ui checkbox">
+                <input type="checkbox" required>
+                <label>Confirm deletion of this post</label>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Delete Post</button>
+    </form>
+
+</main>
+
+<% include partials/footer %>

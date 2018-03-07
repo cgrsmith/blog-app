@@ -6,17 +6,22 @@
     </header>
     
     <% blogs.forEach(function(blog) { %>
-    <article class="ui container segment">
-        <header class="ui header">
-            <h2><%= blog.title %></h2>
-        </header>
-        <span>By: <%= blog.author %> (<%= blog.created.toDateString() %>)</span>
-        <img  class="ui image small" src="<%= blog.image %>" alt="Post Thumbnail">
-        <p><%- blog.body.substring(0,300) %>...
-        </p>
-        <a href="/blog/<%= blog._id %>">Read Post</a>
-    </article>
+    <article class="ui container segment raised">
+        <div class="ui items"> <div class="item">
+            <div class="image">
+                <img class="image small" src="<%= blog.image %>" alt="Post Thumbnail">
+            </div>
+            <div class="content">
+                <header class="ui header">
+                    <h2 ><%= blog.title %></h2>
+                </header>
+                <p class="meta">By: <%= blog.author %> (<%= blog.created.toDateString() %>)</p>
+                <p><%= blog.content.substring(0,300) %>...</p>
+                <a href="/blog/<%= blog._id %>">Read Post</a>
+            </div>
+        </div> </div>
 
+    </article>
     <% }); %>
 
 </main>

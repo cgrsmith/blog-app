@@ -7,15 +7,15 @@
     <form action="/blog" method="POST" class="ui form segment">
         <div class="field">
             <label>Post Title</label>
-            <input type="text" name="blog[title]" placeholder="Title">
+            <input type="text" name="blog[title]" placeholder="Title" required>
         </div>
         <div class="field">
             <label>Image Link</label>
-            <input type="text" name="blog[imageLink]" placeholder="Image Link">
+            <input type="text" name="blog[image]" placeholder="Image Link" required>
         </div>
         <div class="field"> 
             <label>Post Text</label>
-            <textarea name="blog[content]" placeholder="Text"></textarea>
+            <textarea name="blog[content]" placeholder="Text" required></textarea>
         </div>
         <button class="ui big button" type="submit">Submit Post</button>
     
